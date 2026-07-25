@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,426 +12,1163 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #eef1f5;
-            color: #1e2a3a;
-            line-height: 1.6;
-            padding: 30px 20px;
+            font-family: "Segoe UI", "PingFang SC", Roboto, "Helvetica Neue", sans-serif;
+            background: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.7;
+            padding: 40px 20px;
         }
+
         .container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 18px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            display: grid;
-            grid-template-columns: 34% 66%;
-            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            padding: 50px 60px;
         }
-        /* ===== 左侧栏 ===== */
-        .sidebar {
-            background: #1a2634;
-            color: #e0e9f2;
-            padding: 34px 26px;
+
+        /* ===== 头部 ===== */
+        .header {
             display: flex;
-            flex-direction: column;
-            gap: 24px;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
-        .avatar {
-            text-align: center;
+
+        .header-left h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 4px;
         }
-        .avatar .name {
-            font-size: 28px;
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: 1px;
+
+        .header-left .title {
+            font-size: 18px;
+            color: #2b6cb0;
+            font-weight: 500;
         }
-        .avatar .title {
-            font-size: 16px;
-            color: #9bb8d9;
-            margin-top: 4px;
-        }
-        .avatar .org {
+
+        .header-right {
+            text-align: right;
             font-size: 15px;
-            color: #b0cce5;
-            margin-top: 2px;
+            color: #4a5568;
+            line-height: 1.8;
         }
-        .divider {
-            height: 1px;
-            background: #33475e;
-            margin: 6px 0 10px 0;
-        }
-        .section-title {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #b6d0e8;
-            border-bottom: 2px solid #33475e;
-            padding-bottom: 8px;
-            margin-bottom: 14px;
-        }
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 14px;
-            color: #d0dcec;
-            word-break: break-all;
-        }
-        .contact-list i {
+
+        .header-right i {
             width: 20px;
-            color: #6a9fd8;
-            font-size: 15px;
-            text-align: center;
+            color: #2b6cb0;
         }
-        .contact-list a {
-            color: #d0dcec;
+
+        .header-right a {
+            color: #2b6cb0;
             text-decoration: none;
         }
-        .contact-list a:hover { color: #fff; }
-        .edu-item {
-            margin-bottom: 12px;
+
+        .header-right a:hover {
+            text-decoration: underline;
         }
-        .edu-item .degree {
-            font-weight: 600;
-            font-size: 15px;
-            color: #e8edf3;
+
+        /* ===== 通用 ===== */
+        .section {
+            margin-top: 30px;
         }
-        .edu-item .detail {
-            font-size: 13.5px;
-            color: #b0c8dd;
-            margin-top: 1px;
-        }
-        .edu-item .detail i {
-            color: #6a9fd8;
-            margin-right: 4px;
-        }
-        .tag-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 4px;
-        }
-        .tag-group span {
-            background: #2a3f56;
-            padding: 3px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            color: #deecf7;
-            border: 1px solid #3d5773;
-        }
-        .project-item {
-            font-size: 13.5px;
-            margin-bottom: 10px;
-            border-bottom: 1px dashed #2e4056;
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a365d;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 8px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
         }
-        .project-item .proj-title {
-            font-weight: 500;
-            color: #dce8f2;
+
+        .section-title i {
+            color: #2b6cb0;
+            margin-right: 10px;
+            width: 24px;
         }
-        .project-item .proj-meta {
-            font-size: 12.5px;
-            color: #9bb8d9;
+
+        .section-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2b6cb0;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            padding-left: 4px;
         }
-        /* ===== 右侧主内容 ===== */
-        .main {
-            padding: 36px 38px 36px 30px;
-            background: #ffffff;
-        }
-        .main .section-title {
-            color: #1a2634;
-            border-bottom: 2px solid #e6edf4;
-            margin-top: 22px;
-            text-transform: uppercase;
-            font-size: 15px;
-            letter-spacing: 1px;
-        }
-        .main .section-title:first-of-type { margin-top: 0; }
-        .profile-text {
-            font-size: 14.5px;
-            color: #1f3143;
-            margin-bottom: 4px;
+
+        p {
+            margin-bottom: 12px;
             text-align: justify;
         }
-        .pub-list {
-            list-style: none;
-            padding-left: 0;
+
+        ul {
+            padding-left: 24px;
+            margin-bottom: 12px;
         }
-        .pub-list li {
-            font-size: 13.8px;
-            padding: 5px 0 5px 18px;
-            position: relative;
-            border-bottom: 1px solid #f0f4f8;
-            color: #1f3143;
+
+        li {
+            margin-bottom: 4px;
         }
-        .pub-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: #2d5f8b;
+
+        /* ===== 项目列表 ===== */
+        .project-item {
+            padding: 8px 0 8px 16px;
+            border-left: 3px solid #2b6cb0;
+            margin-bottom: 10px;
+            background: #f7fafc;
+            border-radius: 0 6px 6px 0;
+            padding-right: 12px;
+        }
+
+        .project-item .proj-title {
             font-weight: 600;
+            font-size: 15px;
+            color: #1a365d;
         }
-        .pub-list li .pub-authors {
-            color: #2d5f8b;
+
+        .project-item .proj-meta {
+            font-size: 14px;
+            color: #4a5568;
+            margin-top: 2px;
+        }
+
+        /* ===== 成果列表 ===== */
+        .pub-item {
+            padding: 6px 0 6px 16px;
+            border-left: 2px solid #cbd5e0;
+            margin-bottom: 6px;
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        .pub-item .pub-authors {
             font-weight: 500;
         }
-        .pub-list li .pub-journal {
+
+        .pub-item .pub-journal {
             font-style: italic;
-            color: #3d5a77;
+            color: #2d3748;
         }
-        .pub-list li .pub-status {
-            color: #b8860b;
+
+        .pub-item .pub-year {
+            color: #718096;
+            font-size: 13px;
+        }
+
+        .pub-item .pub-extra {
+            color: #e53e3e;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 12.5px;
         }
-        .sub-list {
-            list-style: none;
-            padding-left: 8px;
+
+        /* ===== 教育经历 ===== */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 6px 0;
+            border-bottom: 1px dashed #edf2f7;
         }
-        .sub-list li {
-            font-size: 13.8px;
-            padding: 3px 0 3px 18px;
-            position: relative;
-            border-bottom: 1px solid #f5f8fa;
-        }
-        .sub-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2d5f8b;
-            font-weight: 700;
-        }
-        .student-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px 18px;
-            font-size: 13.8px;
-            margin-top: 4px;
-        }
-        .student-grid .year-label {
+
+        .edu-item .edu-degree {
             font-weight: 600;
-            color: #1a2634;
-            grid-column: 1 / -1;
-            margin-top: 6px;
-            border-bottom: 1px dashed #dce3ec;
-            padding-bottom: 2px;
+            color: #1a365d;
         }
-        .student-grid .stu-item {
-            padding: 2px 0;
-            color: #1f3143;
+
+        .edu-item .edu-school {
+            color: #2d3748;
         }
-        .badge {
-            display: inline-block;
-            background: #eef3f8;
-            color: #1a2634;
-            font-size: 12px;
-            padding: 1px 12px;
-            border-radius: 20px;
-            margin-left: 6px;
+
+        .edu-item .edu-date {
+            color: #718096;
+            font-size: 14px;
         }
-        @media (max-width: 820px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { padding: 28px 20px; }
-            .main { padding: 24px 18px; }
-            .student-grid { grid-template-columns: 1fr; }
+
+        .edu-item .edu-meta {
+            color: #4a5568;
+            font-size: 14px;
         }
+
+        /* ===== 学生列表 ===== */
+        .student-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            padding: 8px 0 8px 16px;
+            border-left: 3px solid #2b6cb0;
+            background: #f7fafc;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 10px;
+        }
+
+        .student-grid .student-tag {
+            font-size: 14px;
+            color: #2d3748;
+        }
+
+        .student-grid .student-tag .label {
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        /* ===== 荣誉列表 ===== */
+        .award-item {
+            padding: 4px 0 4px 16px;
+            border-left: 2px solid #ecc94b;
+            margin-bottom: 4px;
+            font-size: 14.5px;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 18px;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .header-right {
+                text-align: left;
+                margin-top: 12px;
+            }
+
+            .header-left h1 {
+                font-size: 26px;
+            }
+        }
+
+        /* ===== 打印样式 ===== */
         @media print {
-            body { background: #fff; padding: 0; }
-            .container { box-shadow: none; border-radius: 0; }
-            .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 30px 40px;
+            }
+            .project-item {
+                background: #f9f9f9;
+            }
+            .student-grid {
+                background: #f9f9f9;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<!-- ===== 左侧栏 ===== -->
-<aside class="sidebar">
-    <div class="avatar">
-        <div class="name">孙毅</div>
-        <div class="title">教授 · 硕导</div>
-        <div class="org"><i class="fas fa-university" style="margin-right:6px;color:#6a9fd8;"></i>新疆财经大学 · 统计与数据科学学院</div>
-    </div>
-
-    <div>
-        <div class="section-title"><i class="fas fa-address-card" style="margin-right:8px;"></i>联系方式</div>
-        <ul class="contact-list">
-            <li><i class="fas fa-phone"></i> <a href="tel:+8615099375317">15099375317</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:brianys1984@126.com">brianys1984@126.com</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:brian@xjufe.edu.cn">brian@xjufe.edu.cn</a></li>
-            <li><i class="fas fa-map-marker-alt"></i> 新疆 · 乌鲁木齐</li>
-        </ul>
-    </div>
-
-    <div>
-        <div class="section-title"><i class="fas fa-graduation-cap" style="margin-right:8px;"></i>教育经历</div>
-        <div class="edu-item">
-            <div class="degree">博士 · 应用数学</div>
-            <div class="detail"><i class="fas fa-calendar-alt"></i> 2013–2016 · 南开大学</div>
-            <div class="detail" style="font-size:12.5px;color:#9bb8d9;">导师：杨立波 教授</div>
+    <!-- ============================================================ -->
+    <!-- 头部信息 -->
+    <!-- ============================================================ -->
+    <div class="header">
+        <div class="header-left">
+            <h1>孙毅</h1>
+            <div class="title">新疆财经大学 · 统计与数据科学学院 教授</div>
         </div>
-        <div class="edu-item">
-            <div class="degree">硕士 · 应用数学</div>
-            <div class="detail"><i class="fas fa-calendar-alt"></i> 2008–2011 · 新疆大学</div>
-            <div class="detail" style="font-size:12.5px;color:#9bb8d9;">导师：孟吉翔 教授 · 陈永川 院士（联培）</div>
-        </div>
-        <div class="edu-item">
-            <div class="degree">本科 · 应用数学</div>
-            <div class="detail"><i class="fas fa-calendar-alt"></i> 2004–2008 · 新疆大学</div>
+        <div class="header-right">
+            <div><i class="fas fa-phone-alt"></i> 15099375317</div>
+            <div><i class="fas fa-envelope"></i> <a href="mailto:brianys1984@126.com">brianys1984@126.com</a></div>
+            <div><i class="fas fa-envelope"></i> <a href="mailto:brian@xjufe.edu.cn">brian@xjufe.edu.cn</a></div>
         </div>
     </div>
 
-    <div>
-        <div class="section-title"><i class="fas fa-flask" style="margin-right:8px;"></i>科研兴趣</div>
-        <div class="tag-group">
-            <span>概率图模型</span><span>因果推理</span>
-            <span>组合数学</span><span>图论</span>
-            <span>机器学习</span><span>贝叶斯网络</span>
-        </div>
-    </div>
-
-    <div>
-        <div class="section-title"><i class="fas fa-tasks" style="margin-right:8px;"></i>在研项目</div>
-        <div class="project-item">
-            <div class="proj-title">国家自然科学基金天元基金子课题</div>
-            <div class="proj-meta">No.12426105 · 2025.01–2025.12</div>
-        </div>
-        <div class="project-item">
-            <div class="proj-title">国家自然科学基金天元基金 · 图模型与因果推断讲习班</div>
-            <div class="proj-meta">No.12426520 · 2025.01–2025.12</div>
-        </div>
-        <div class="project-item">
-            <div class="proj-title">新疆自治区自然科学基金</div>
-            <div class="proj-meta">No.2022D01C406 · 2022.10–2025.12</div>
-        </div>
-        <div class="project-item">
-            <div class="proj-title">横向：新疆第五次经济普查重点课题</div>
-            <div class="proj-meta">No.XHYJ-2025-TJ001 · 2025.06–2025.10</div>
-        </div>
-        <div class="project-item">
-            <div class="proj-title">横向：新疆银狐数据科技 · 智能旅游算法</div>
-            <div class="proj-meta">2025.07–2028.06</div>
-        </div>
-    </div>
-
-    <div style="margin-top:auto;font-size:12.5px;color:#6f8aa6;border-top:1px solid #2f4056;padding-top:16px;">
-        <i class="fas fa-print" style="margin-right:6px;"></i> 在线简历 · 持续更新
-    </div>
-</aside>
-
-<!-- ===== 右侧主内容 ===== -->
-<main class="main">
-
+    <!-- ============================================================ -->
     <!-- 个人简介 -->
-    <div>
-        <div class="section-title"><i class="fas fa-user" style="margin-right:8px;"></i>个人简介</div>
-        <p class="profile-text">
-            孙毅，新疆财经大学统计与数据科学学院教授、硕导，南开大学组合数学中心博士，东北师范大学统计学博士后。
-            中国现场统计研究会理事，中国人工智能学会因果与不确定性人工智能专委会委员，中国现场统计研究会因果推断分会常务理事，
-            新疆现场统计研究会常务理事；数据科学与人工智能分会理事；多元统计分会理事；资源与环境分会常务理事，
-            中国工业统计教育研究会地学数据分会理事。受邀担任美国数学会评论员，及ICML、NIPS等顶会论文评审专家。
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-user-circle"></i>个人简介</div>
+        <p>
+            新疆财经大学统计与数据科学学院教授、硕导，南开大学组合数学中心博士，东北师范大学统计学博士后。
+            中国现场统计研究会理事，中国人工智能学会因果与不确定性人工智能专委会委员，
+            中国现场统计研究会因果推断分会常务理事，新疆现场统计研究会常务理事；
+            中国现场统计研究会数据科学与人工智能分会理事；中国现场统计研究会多元统计分会理事；
+            中国现场统计研究会资源与环境分会常务理事，中国工业统计教育研究会地学数据分会理事。
+            受邀担任美国数学会评论员，担任多个国内外知名期刊以及国际顶级会议 ICML, NIPS 的论文评审专家。
         </p>
-        <p class="profile-text" style="margin-top:8px;">
-            研究方向为概率图模型与因果推理。主持国家自然科学基金4项、参与1项；主持中国博士后面上项目1项、
-            新疆自治区青年基金1项、面上项目1项、新疆教育厅青年项目1项；主持教育教改项目2项；主持及参与横向课题4项。
-            发表学术论文50余篇，含Biometrika、JMLR、TPAMI等权威期刊；申请软著3项。
-            获新疆自治区省级教育教学成果奖1项，新疆大学教学成果一等奖1项、三等奖1项。
+        <p>
+            研究方向为概率图模型与因果推理。近年来主持国家自然科学基金4项，参与1项；
+            主持中国博士后面上项目1项，主持新疆自治区青年基金1项，面上项目1项，新疆教育厅青年项目1项；
+            主持教育教改项目2项；正在主持和参与的横向课题4项；发表学术论文50余篇，申请软件著作权3项；
+            其中在统计学领域重要期刊 <em>Biometrika</em>，人工智能领域重要期刊
+            <em>Journal of Machine Learning Research</em>，
+            <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 上各发表论文1篇，
+            在国际权威期刊 <em>Internal Journal of Approximate Reasoning</em>,
+            <em>Statistics and Computing</em>, <em>Applied Mathematics and Computation</em>,
+            <em>Discrete Mathematics and Theoretical Computer Science</em>,
+            <em>Theoretical Computer Science</em>，国内核心期刊 <em>数学学报</em>，<em>应用概率统计</em>，
+            <em>系统科学与数学</em> 等发表多篇学术论文。
+            获新疆自治区省级教育教学成果奖1项，新疆大学教育教学成果奖一等奖1项，三等奖1项。
+        </p>
+        <p>
+            <strong>主要研究成果包括：</strong>
+            （1）组合数论领域，解决了组合学家、数论专家 Melham 和南京大学组合数论专家孙智伟教授提出的多个猜想，
+            利用机器证明方法发现了若干新的组合同余式；
+            （2）图论领域，和合作者一起证明了两类三角化图的词表示的存在性问题，并给出算法构造方法，
+            利用图论工具证明二元集上的 Universal Partial word 的存在性问题和构造方法；
+            （3）统计学领域，解决了图模型可压缩性、可分解性的图论刻画并提出高效识别算法；
+            提出有向变量消元法，建立了贝叶斯网络边际计算与 DAG 图的消元运算之间的联系，
+            设计出了寻找边际模型的高效算法；解决了一般图模型框架下的最小可压缩集的识别问题，
+            提出迄今为止最高效的极小分离子吸收算法；解决了贝叶斯网络的分解与融合问题，
+            提出有向凸子图和有向凸包的概念，提出 DAG 图的递归分解算法，
+            为大规模因果网络的分解和估计奠定了并行与分布式计算的理论基础；
+            利用图着色理论、图分解理论设计了针对高斯图模型的参数估计的多个高效并行计算算法。
         </p>
     </div>
 
-    <!-- 代表性论文（精选） -->
-    <div>
-        <div class="section-title"><i class="fas fa-file-alt" style="margin-right:8px;"></i>代表性论文（* 通信作者）</div>
-        <ul class="pub-list">
-            <li><span class="pub-authors">P. Heng, S.Y. He, Y. Sun, Jianhua Guo*</span> Revisiting Madigan and Mosurski: Collapsibility in Contingency tables. <span class="pub-journal">Biometrika</span>, 2026, doi:10.1093/biomet/asag024</li>
-            <li><span class="pub-authors">P. Heng, X.Y. Hu, Y. Sun*</span> Decomposition for Bayesian Networks: Local and Parallel Inference. <span class="pub-journal">TPAMI</span>, accepted.</li>
-            <li><span class="pub-authors">X.D. Xie, J.H. Guo*, Y. Sun</span> DAGs as Minimal I-maps for the Induced Models of Causal Bayesian Networks under Conditioning. <span class="pub-journal">Journal of Machine Learning Research</span>, 2025, 26:1-62.</li>
-            <li><span class="pub-authors">Y.X. Deng, Y. Sun, H.X. Liu</span> Identifying Collapsible Sets in Directed Graphical Models via Inducing Paths. <span class="pub-journal">Statistics and Computing</span>, 2025, 35:115.</li>
-            <li><span class="pub-authors">L.Y. Tan, Y. Sun*</span> Structure Learning of LWF Chain Graphs Based on Minimal c-separation Trees. <span class="pub-journal">International Journal of Approximate Reasoning</span>, 2024, 175:109298.</li>
-            <li><span class="pub-authors">Y. Du, Y. Sun*, L.Y. Tan</span> Ordinal Causal Discovery Based on Markov Blanket. <span class="pub-journal">Computational Statistics</span>, 2025, 40:1311-1335.</li>
-            <li><span class="pub-authors">W.H. Li, Y. Sun*, P. Heng</span> Conditional independence collapsibility for acyclic directed mixed graph models. <span class="pub-journal">International Journal of Approximate Reasoning</span>, 2024, 170:109208.</li>
-            <li><span class="pub-authors">P. Heng, Y. Sun*</span> Algorithms for convex hull finding in undirected graphical models. <span class="pub-journal">Applied Mathematics and Computation</span>, 2023, 445:1-11.</li>
+    <!-- ============================================================ -->
+    <!-- 教育经历 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i>教育经历</div>
+
+        <div class="edu-item">
+            <span><span class="edu-degree">博士</span> · 南开大学 应用数学专业</span>
+            <span class="edu-date">2013.09 – 2016.06</span>
+        </div>
+        <div class="edu-item" style="padding-left:20px; border-bottom: none; font-size:14px; color:#4a5568;">
+            <span>导师：杨立波教授</span>
+        </div>
+
+        <div class="edu-item">
+            <span><span class="edu-degree">硕士</span> · 新疆大学 应用数学专业</span>
+            <span class="edu-date">2008.09 – 2011.06</span>
+        </div>
+        <div class="edu-item" style="padding-left:20px; border-bottom: none; font-size:14px; color:#4a5568;">
+            <span>导师：孟吉翔教授，陈永川院士</span>
+        </div>
+
+        <div class="edu-item">
+            <span><span class="edu-degree">联培</span> · 南开大学（新疆大学硕士联合培养）</span>
+            <span class="edu-date">2009.09 – 2011.05</span>
+        </div>
+        <div class="edu-item" style="padding-left:20px; border-bottom: none; font-size:14px; color:#4a5568;">
+            <span>联培导师：陈永川院士</span>
+        </div>
+
+        <div class="edu-item">
+            <span><span class="edu-degree">本科</span> · 新疆大学 应用数学专业</span>
+            <span class="edu-date">2004.08 – 2008.07</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 科研兴趣 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-flask"></i>科研兴趣</div>
+        <ul>
+            <li>组合学</li>
+            <li>图论</li>
+            <li>数据科学与人工智能</li>
         </ul>
     </div>
 
-    <!-- 软著 & 荣誉 -->
-    <div>
-        <div class="section-title"><i class="fas fa-copyright" style="margin-right:8px;"></i>软件著作权</div>
-        <ul class="sub-list">
-            <li>孙毅, 叶文倩: 皮肤癌分类识别小程序 (登记号: 2025SR0168384)</li>
-            <li>孙毅, 屈紫婷, 胡锦奎: 基于深度学习的农业病虫害图像识别系统 (登记号: 2025SR0338187)</li>
-            <li>孙毅, 赵璐瑶, 张盼盼: 智慧旅游语音播报微信小程序 (登记号: 2026SR0049513)</li>
-        </ul>
+    <!-- ============================================================ -->
+    <!-- 学位论文与报告 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-file-alt"></i>学位论文与报告</div>
+        <div class="project-item">
+            <div class="proj-title">硕士学位论文 · 置换杨表的组合性质与应用</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">博士学位论文 · 满足三项递推关系的组合序列的不等式与整除性</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">博士后出站报告 · 贝叶斯网边缘模型的极小独立图</div>
+        </div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- 科研项目 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-tasks"></i>科研项目</div>
+
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金数学天元基金子课题 · 基于图论方法的高维复杂数据的结构化分析与建模</div>
+            <div class="proj-meta">孙毅等 · No.12426105 · 2025.01–2025.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金数学天元基金 · 图模型与因果推断前沿讲习班</div>
+            <div class="proj-meta">孙毅等 · No.12426520 · 2025.01–2025.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆自治区自然科学基金 · 图模型边缘化与可压缩性研究</div>
+            <div class="proj-meta">孙毅等 · No.2022D01C406 · 2022.10–2025.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">东北师范大学理科重点科研基地开放课题 · 高维图模型的降维技术与算法设计</div>
+            <div class="proj-meta">孙毅 · 2023.09–2024.08</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">东北师范大学应用统计教育部重点实验室开放课题 · 贝叶斯网的分解性和条件化研究</div>
+            <div class="proj-meta">孙毅 · No.130028906 · 2020.05–2021.04</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金天元基金项目 · 贝叶斯网的分解理论及其应用</div>
+            <div class="proj-meta">孙毅、郭建华 · No.11726630 · 2018.01–2018.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金天元基金项目 · 贝叶斯网的分解理论及其应用</div>
+            <div class="proj-meta">郭建华、孙毅 · No.11726629 · 2018.01–2018.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金青年基金 · 若干组合同余式的研究</div>
+            <div class="proj-meta">孙毅等 · No.11701491 · 2018.01–2020.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">中国博士后基金面上项目 · 若干组合多项式对数凸凹性</div>
+            <div class="proj-meta">孙毅 · No.2017M621188 · 2017.11–2019.11</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆高校科研计划青年项目 · 组合同余式的组合证明与机器证明</div>
+            <div class="proj-meta">孙毅等 · No.XJEDU2016S032 · 2017.01–2018.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆自然科学基金青年基金 · 组合不等式及其应用研究</div>
+            <div class="proj-meta">孙毅等 · No.2017D01C084 · 2017.07–2020.06</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆大学博士科研启动基金 · 对称群上的若干统计量及其计数问题的研究</div>
+            <div class="proj-meta">孙毅等 · No.BS160206 · 2017.06–2019.05</div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 横向科研项目 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-handshake"></i>横向科研项目</div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆维吾尔自治区第五次经济普查重点课题 · 新疆十大产业集群发展状况研究</div>
+            <div class="proj-meta">孙毅等 · No.XHYJ-2025-TJ001 · 2025.06–2025.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆银狐数据科技有限公司技术服务项目 · 基于个性化推荐的智能旅游算法与统计学在提升游客留存率方面的研究与应用</div>
+            <div class="proj-meta">孙毅等 · 2025.07–2028.06</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆维吾尔自治区第五次经济普查一般课题 · 新疆企业活跃度、生命周期和发展质量研究</div>
+            <div class="proj-meta">侯江霞、孙毅等 · No.XHYJ-2025-TJ002 · 2025.06–2025.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆维吾尔自治区第五次经济普查一般课题 · 双碳目标下新疆企业研发投入对绿色创新绩效的影响研究</div>
+            <div class="proj-meta">张明祖、孙毅等 · No.XHYJ-2025-TJ002 · 2025.06–2025.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">文化市场综合执法相关指导性文件制定审核和协助服务项目（二次）</div>
+            <div class="proj-meta">梅雪晖等 · 新疆文旅厅 · 2021.12–2022.12</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆交通大数据可视化研究和应用</div>
+            <div class="proj-meta">梅雪晖等 · 新疆交投科技有限责任公司 · 2020.10–2021.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">新疆R&D投入的结构特征与效益分析及其提升策略研究</div>
+            <div class="proj-meta">胡莹莹等 · 新疆统计学会 · 2025.09–2025.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">旅游大数据决策支撑系统研究与应用</div>
+            <div class="proj-meta">梅雪晖等 · 中国文旅部 · 2020.09–2022.10</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">图的奇导出子图问题的研究</div>
+            <div class="proj-meta">宝音都仍等 · 新疆教育厅 · 2019.04–2021.07</div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 教研教改项目 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-chalkboard-teacher"></i>教研教改项目</div>
+
+        <div class="project-item">
+            <div class="proj-title">多元统计分析课程思政建设</div>
+            <div class="proj-meta">梅雪晖、孙毅等 · 新疆大学研究生教育教学改革项目 No.XJDX2021YKC · 2021.12–2023.11</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">机器学习融入计量经济学的课程教学改革与探索</div>
+            <div class="proj-meta">胡莹莹、孙毅等 · 新疆大学研究生教育教学改革项目 No.XJDX2022YG42 · 2022.12–2023.11</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">统计学专业学位硕士培养模式改革与探索</div>
+            <div class="proj-meta">孙毅等 · 新疆大学研究生教育教学改革项目 No.XJDX2021 · 2021.12–2023.11</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">《统计学习》课程教学案例库</div>
+            <div class="proj-meta">孙毅等 · 新疆大学专业学位研究生教学案例建设项目 · 2022.07–2024.06</div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 代表性研究成果 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-file-alt"></i>代表性研究成果 <span style="font-size:14px; font-weight:400; color:#718096; margin-left:8px;">（通信作者 *）</span></div>
+
+        <div class="pub-item">
+            <span class="pub-authors">D. Li, Y. Sun*, Jianhua Guo*</span>
+            <span class="pub-journal">On Parallelization of Iterative Proportional Scaling via Graph Edge Coloring</span>
+            <span class="pub-extra">submitted</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">J.R. Liu, Y. Sun*</span>
+            <span class="pub-journal">Distributed Parameter Estimation for Gaussian Graphical Models</span>
+            <span class="pub-extra">under review at IEEE TSP</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">P. Heng, S.Y. He, Y. Sun, and Jianhua Guo*</span>
+            <span class="pub-journal">Graphical Model Decomposition via Local Expansion Theory and Linear-Memory Algorithm</span>
+            <span class="pub-extra">submitted</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">P. Heng, S.Y. He, Y. Sun, and Jianhua Guo*</span>
+            <span class="pub-journal">Revisiting Madigan and Mosurski: Collapsibility in Contingency tables</span>
+            <span class="pub-journal">Biometrika</span>
+            <span class="pub-year">2026+, doi:10.1093/biomet/asag024</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">P. Heng, X.Y. Hu, Y. Sun*</span>
+            <span class="pub-journal">Decomposition for Bayesian Networks: Local and Parallel Inference</span>
+            <span class="pub-extra">Accepted at TPAMI</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">X.D. Xie, J.H. Guo*, Y. Sun</span>
+            <span class="pub-journal">DAGs as Minimal I-maps for the Induced Models of Causal Bayesian Networks under Conditioning</span>
+            <span class="pub-journal">Journal of Machine Learning Research</span>
+            <span class="pub-year">2025(26):1-62</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y.X. Deng, Y. Sun, H.X. Liu</span>
+            <span class="pub-journal">Identifying Collapsible Sets in Directed Graphical Models via Inducing Paths</span>
+            <span class="pub-journal">Statistics and Computing</span>
+            <span class="pub-year">2025,35:115</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">H. Z. Q. Chen, Sergey Kitaev, Torsten Mutze and Y. Sun*</span>
+            <span class="pub-journal">On universal partial words</span>
+            <span class="pub-journal">Discrete Mathematics and Theoretical Computer Science</span>
+            <span class="pub-year">2017,19(1):1-19</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*</span>
+            <span class="pub-journal">Finding more divisibility properties on binomial sums with the WZ method</span>
+            <span class="pub-journal">The Ramanujan Journal</span>
+            <span class="pub-year">2019,48(1):173-189</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun, Matthew H. Y. Xie and Arthur L. B. Yang*</span>
+            <span class="pub-journal">Melham's Conjecture on Odd Power Sums of Fibonacci Numbers</span>
+            <span class="pub-journal">Quaestiones Mathematicae</span>
+            <span class="pub-year">2016,39(7):945-957</span>
+        </div>
+
+        <div style="margin-top:16px; font-weight:600; color:#2b6cb0; font-size:16px;">机器学习与人工智能（通信作者 *）</div>
+
+        <div class="pub-item">
+            <span class="pub-authors">L.Y. Tan, Y. Sun*</span>
+            <span class="pub-journal">Structure Learning of LWF Chain Graphs Based on Minimal c-separation Trees</span>
+            <span class="pub-journal">International Journal of Approximate Reasoning</span>
+            <span class="pub-year">2024,175:109298</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Du, Y. Sun*, L.Y. Tan</span>
+            <span class="pub-journal">Ordinal Causal Discovery Based on Markov Blanket</span>
+            <span class="pub-journal">Computational Statistics</span>
+            <span class="pub-year">2025,40:1311-1335</span>
+        </div>
+
+        <div style="margin-top:16px; font-weight:600; color:#2b6cb0; font-size:16px;">统计学（通信作者 *）</div>
+
+        <div class="pub-item">
+            <span class="pub-authors">W.H. Li, Y. Sun*, P. Heng</span>
+            <span class="pub-journal">Conditional independence collapsibility for acyclic directed mixed graph models</span>
+            <span class="pub-journal">International Journal of Approximate Reasoning</span>
+            <span class="pub-year">2024,170:109208</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">X. Kang, Y. Sun*</span>
+            <span class="pub-journal">Hyper Markov Law in Undirected Graphical Models with Its Applications</span>
+            <span class="pub-journal">Communications in Statistics-Theory and Methods</span>
+            <span class="pub-year">2024,53(20):7262-7280</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">P. Heng, Y. Sun*</span>
+            <span class="pub-journal">Algorithms for convex hull finding in undirected graphical models</span>
+            <span class="pub-journal">Applied Mathematics and Computation</span>
+            <span class="pub-year">2023,445:1-11</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">X. Kang, Y.Y. Hu, Y. Sun*</span>
+            <span class="pub-journal">Undirected structural Markov property for Bayesian model determination</span>
+            <span class="pub-journal">Mathematics</span>
+            <span class="pub-year">2023,11(7):1590</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">C.Q. Zhao, Y. Sun*</span>
+            <span class="pub-journal">Conditional independence collapsibility in LWF chain graphical models</span>
+            <span class="pub-journal">Acta Mathematicae Applicatae Sinica (English Series)</span>
+            <span class="pub-extra">forthcoming</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 软著与专利 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-copyright"></i>软著与专利</div>
+
+        <div class="project-item">
+            <div class="proj-title">软著 · 皮肤癌分类识别小程序</div>
+            <div class="proj-meta">孙毅, 叶文倩 · 登记号: 2025SR0168384</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">软著 · 基于深度学习的农业病虫害图像识别系统</div>
+            <div class="proj-meta">孙毅, 屈紫婷, 胡锦奎 · 登记号: 2025SR0338187</div>
+        </div>
+
+        <div class="project-item">
+            <div class="proj-title">软著 · 智慧旅游语音播报微信小程序</div>
+            <div class="proj-meta">孙毅, 赵璐瑶, 张盼盼 · 登记号: 2026SR0049513</div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 数学论文 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-square-root-alt"></i>数学论文 <span style="font-size:14px; font-weight:400; color:#718096; margin-left:8px;">（通信作者 *）</span></div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Yi Sun*, Caiqin Zhao</span>
+            <span class="pub-journal">Conditional independence collapsibility for LWF chain graphical models</span>
+            <span class="pub-journal">Acta Mathematicae Applicatae Sinica (English Series)</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">T.T. Wang and Yi Sun*</span>
+            <span class="pub-journal">Parallel Computing Minimal Triangulations</span>
+            <span class="pub-journal">Journal of Systems Science & Complexity</span>
+            <span class="pub-extra">accepted</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Herman Z. Q. Chen, Sergey Kitaev* and Y. Sun</span>
+            <span class="pub-journal">Lower Bounds, and Exact Enumeration in Particular Cases, for the Probability of Existence of a Universal Cycle or a Universal Word for a Set of Words</span>
+            <span class="pub-journal">Mathematics</span>
+            <span class="pub-year">2020,8,778</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun* and James J.Y. Zhao</span>
+            <span class="pub-journal">Log-behavior of two sequences related to the elliptic integrals</span>
+            <span class="pub-journal">Acta Mathematicae Applicatae Sinica (English Series)</span>
+            <span class="pub-year">2020,36(3):590-602</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*</span>
+            <span class="pub-journal">Proof of a conjecture by Wiemann and Cooper</span>
+            <span class="pub-journal">Ars Combinatoria</span>
+            <span class="pub-year">2019,143:299-307</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*, Y.Y. Hu</span>
+            <span class="pub-journal">A Probabilistic method for the Number of Standard Immaculate Tableaux</span>
+            <span class="pub-journal">Rocky Mountain Journal of Mathematics</span>
+            <span class="pub-year">2018,48(6):2087-2097</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Emily X. L. Gao and Y. Sun</span>
+            <span class="pub-journal">Enumeration of Type D Permutations with Alternating Runs</span>
+            <span class="pub-journal">Results in Mathematics</span>
+            <span class="pub-year">2018,73:77</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*</span>
+            <span class="pub-journal">On a ratio monotonicity conjecture of a new kind of numbers</span>
+            <span class="pub-journal">Journal of Inequalities and Applications</span>
+            <span class="pub-year">2018,(2018):24</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun* and J.X. Meng</span>
+            <span class="pub-journal">Proof of a conjecture by Z.W. Sun on trigonometric series</span>
+            <span class="pub-journal">Utilitas Mathematica</span>
+            <span class="pub-year">2017,102:223-229</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*</span>
+            <span class="pub-journal">On some divisibility properties of binomial sums</span>
+            <span class="pub-journal">International Journal of Number Theory</span>
+            <span class="pub-year">2017,13(9):2265-2276</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">H. Z. Q. Chen, Sergey Kitaev, Torsten Mutze and Y. Sun*</span>
+            <span class="pub-journal">On universal partial words</span>
+            <span class="pub-journal">Discrete Mathematics and Theoretical Computer Science</span>
+            <span class="pub-year">2017,19(1):1-19</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun, Matthew H. Y. Xie and Arthur L. B. Yang*</span>
+            <span class="pub-journal">Melham's Conjecture on Odd Power Sums of Fibonacci Numbers</span>
+            <span class="pub-journal">Quaestiones Mathematicae</span>
+            <span class="pub-year">2016,39(7):945-957</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*, Y.Y. Hu and B. Wu</span>
+            <span class="pub-journal">Proof of a conjecture of Z-W Sun on ratio monotonicity</span>
+            <span class="pub-journal">Journal of Inequalities and Applications</span>
+            <span class="pub-year">2016,(2016):272</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun*</span>
+            <span class="pub-journal">On two Curious Sums of Triple Multiplication of Binomial Coefficients</span>
+            <span class="pub-journal">Ars Combinatoria</span>
+            <span class="pub-year">2016,128:341-347</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Herman Z. Q. Chen, Sergey Kitaev and Y. Sun*</span>
+            <span class="pub-journal">Word-representability of triangulations of grid-covered cylinder graphs</span>
+            <span class="pub-journal">Discrete Applied Mathematics</span>
+            <span class="pub-year">2016,213:60-70</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Alice L. L. Gao, Emily X. L. Gao, Patxi Laborde-Zubieta and Y. Sun*</span>
+            <span class="pub-journal">Enumeration of corners in tree-like tableaux</span>
+            <span class="pub-journal">Discrete Mathematics and Theoretical Computer Science</span>
+            <span class="pub-year">2016,18(3):1-26</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Herman Z.Q. Chen, Sergey Kitaev* and Y. Sun</span>
+            <span class="pub-journal">Word-representability of subdivisions of triangular grid graphs</span>
+            <span class="pub-journal">Graph and Combinatorics</span>
+            <span class="pub-year">32(5) (2016):1749-1761</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y.Y. Hu, L.J. Wu*, Y. Sun</span>
+            <span class="pub-journal">The Maximum Entropy Method to the Credibility Estimation</span>
+            <span class="pub-journal">Chinese Journal of Applied Probability and Statistics</span>
+            <span class="pub-year">2016,32(5):463-475</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Y. Sun* and B. Wu</span>
+            <span class="pub-journal">Two-log-convexity of the Catalan-Larcombe-French sequence</span>
+            <span class="pub-journal">Journal of Inequalities and Applications</span>
+            <span class="pub-year">2015,(2015):404</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">Guifu Su*, Liming Xiong, Y. Sun and Daobin Li</span>
+            <span class="pub-journal">Nordhaus-Gaddum-type inequality for the hyper-Wiener index of graphs when decomposing into three parts</span>
+            <span class="pub-journal">Theoret. Comput. Sci.</span>
+            <span class="pub-year">2013,471:74-83</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 核心期刊论文 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-file-alt"></i>核心期刊论文</div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孟繁宜, 孙毅*</span>
+            <span class="pub-journal">基于改进两步组合算法的贝叶斯网络结构学习</span>
+            <span class="pub-journal">东北师范大学学报(自然科学版)</span>
+            <span class="pub-year">2025,57(4):36-42</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">赵新宇, 胡莹莹, 孙毅*</span>
+            <span class="pub-journal">基于拓扑序和惩罚似然的贝叶斯网络结构学习</span>
+            <span class="pub-journal">应用概率统计</span>
+            <span class="pub-year">2025,41(3):467-481</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">王婷, 孙毅*</span>
+            <span class="pub-journal">因果图的无混杂和可压缩条件研究</span>
+            <span class="pub-journal">应用概率统计</span>
+            <span class="pub-year">2024,40(4):625-643</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">范雨, 胡莹莹, 衡佩, 孙毅*</span>
+            <span class="pub-journal">贝叶斯网的边际马尔科夫子图及其应用</span>
+            <span class="pub-journal">数学学报</span>
+            <span class="pub-year">2024,67(3):565-581</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">郑靓, 孙毅*</span>
+            <span class="pub-journal">基于混合团树的贝叶斯网智能推理算法</span>
+            <span class="pub-journal">东北师范大学学报(自然科学版)</span>
+            <span class="pub-year">2023,52(2):35-44</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙婷然, 孙毅*</span>
+            <span class="pub-journal">贝叶斯网马尔科夫性的边缘化</span>
+            <span class="pub-journal">系统科学与数学</span>
+            <span class="pub-year">2022,42(12):3380-3396</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">胡莹莹, 熊义财, 孙毅*</span>
+            <span class="pub-journal">形状为 (n,n) 标准杨表的一个双射</span>
+            <span class="pub-journal">黑龙江大学学报</span>
+            <span class="pub-year">2022,39(1):24-30</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">一类广义斐波那契二项式系数序列的对数凹性研究</span>
+            <span class="pub-journal">新疆大学学报(自然科学版)</span>
+            <span class="pub-year">2018,35(4):416-420</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">Lucas序列奇数方幂和式猜想的一个新证明</span>
+            <span class="pub-journal">黑龙江大学学报(自然科学版)</span>
+            <span class="pub-year">2017,34(3):297-300</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">胡莹莹, 吴黎军, 孙毅</span>
+            <span class="pub-journal">稳健贝叶斯方法在指数保费原理下的应用</span>
+            <span class="pub-journal">西南大学学报(自然科学版)</span>
+            <span class="pub-year">2016,38(3):83-89</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">胡莹莹, 吴黎军, 孙毅</span>
+            <span class="pub-journal">最大熵方法下的纯稳健信度估计</span>
+            <span class="pub-journal">河南师范大学学报(自然科学版)</span>
+            <span class="pub-year">2016,44(1):15-20</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">胡莹莹, 吴黎军, 孙毅</span>
+            <span class="pub-journal">指数保费原理下的递推信度模型</span>
+            <span class="pub-journal">黑龙江大学学报(自然科学版)</span>
+            <span class="pub-year">2015,32(3):319-324</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅, 胡莹莹, 孟吉翔</span>
+            <span class="pub-journal">置换杨图的组合性质及其应用</span>
+            <span class="pub-journal">河南师范大学学报(自然科学版)</span>
+            <span class="pub-year">2015,43(3):5-10</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">一个组合恒等式的算法证明</span>
+            <span class="pub-journal">新疆大学学报(自然科学版)</span>
+            <span class="pub-year">2013,30(2):154-156</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅, 苏贵福</span>
+            <span class="pub-journal">赋权2-Motzkin路的组合恒等式及其应用</span>
+            <span class="pub-journal">山东大学学报(自然科学版)</span>
+            <span class="pub-year">2012,47(6):90-94</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 教研论文 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-chalkboard"></i>教研论文</div>
+
+        <div class="pub-item">
+            <span class="pub-authors">王宛宽, 熊义财, 孙毅</span>
+            <span class="pub-journal">R-贝尔数的对数性质</span>
+            <span class="pub-journal">大学数学</span>
+            <span class="pub-year">2022,38(4):115-120</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">胡莹莹, 孙毅</span>
+            <span class="pub-journal">《线性代数》课程教学改革的研究与思考</span>
+            <span class="pub-journal">吉林省教育学院学报</span>
+            <span class="pub-year">2018,34(3):49-52</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">范德蒙行列式的一个组合解释</span>
+            <span class="pub-journal">考试周刊</span>
+            <span class="pub-year">2017,80:14-15</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅, 胡莹莹</span>
+            <span class="pub-journal">关于我国高等教育改革的思考</span>
+            <span class="pub-journal">赤峰学院学报(自然科学版)</span>
+            <span class="pub-year">2012,28(24):243-245</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">统计学专业研究生课程教学的研究与思考</span>
+            <span class="pub-journal">科教导刊</span>
+            <span class="pub-year">2021,47(6):1-4</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-authors">孙毅</span>
+            <span class="pub-journal">统计学专业学位研究生培养模式改革研究——以西部地区某大学为例</span>
+            <span class="pub-journal">创新教育研究</span>
+            <span class="pub-year">2022,10(7):1661-1666</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 会议报告 -->
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-users"></i>会议报告</div>
+
+        <div class="pub-item">
+            <span class="pub-journal">On Parallelization of Iterative Proportional Scaling via Graph Edge Coloring</span>
+            <span class="pub-year">中国现场统计研究会因果推断分会2026年学术年会，吉林长春，2026.7.19-7.21</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Decomposition for Bayesian networks: Local and Parallel Inference</span>
+            <span class="pub-year">第四届统计与数据科学联合会，贵州贵阳，2026.7.11-7.14</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Collapsibility via Minimal Separators in Contingency Tables</span>
+            <span class="pub-year">2026年多元分析年会暨国际应用统计九章会议，甘肃兰州，2026.6.5-6.7</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">贝叶斯网的模型分解及其在局部与并行统计推断中的应用</span>
+            <span class="pub-year">中国现场统计研究会资源与环境分会第18届学术年会，广东肇庆，2025.9.17-9.19</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Structural analysis for graphical models</span>
+            <span class="pub-year">第11届新疆青年博士论坛，新疆伊宁，2025.6.27-6.29</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Advances in structural dimension reduction of graphical models</span>
+            <span class="pub-year">中国工业与应用数学学会第22届学术年会，南京，2024.10.24-27</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Structural dimension reduction in Bayesian networks</span>
+            <span class="pub-year">中国人工智能学会因果与不确定人工智能专业委员会2024年学术年会，长沙，2024.10.19-21</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Recent advances in structural dimension reduction of graphical models</span>
+            <span class="pub-year">统计交叉科学研究分会第二届学术年会，长春，2024.08.02-04</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Structural dimension reduction in Bayesian networks</span>
+            <span class="pub-year">第二届统计与数据科学联合会，昆明，2024.07.11-14</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Ordinal causal discovery based on Markov blankets</span>
+            <span class="pub-year">2024年第十届新疆数学青年博士论坛，乌鲁木齐，2024.06.28-07.01</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">图的凸性与统计降维</span>
+            <span class="pub-year">2023年西安组合数学及其应用研讨会，西安，2023.12.15-17</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Marginalization and collapsibility in Bayesian networks</span>
+            <span class="pub-year">第13届西安图论与组合数学研讨会，西安，2023.12.15-17</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Algorithms for finding convex hull in undirected graphical models</span>
+            <span class="pub-year">2023年新疆-上海图论与组合研讨会，乌鲁木齐，2023.06.23-25</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">An efficient convex hull finding algorithm for graphical models</span>
+            <span class="pub-year">第十届全国组合数学与图论大会，哈尔滨，2022.08.19-22</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Finding minimal I-maps for margins of Bayesian networks</span>
+            <span class="pub-year">第12届3+x统计学及其应用会议，西宁，2021.07.27-29</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Minimal I-maps for the induced models of Bayesian networks under conditioning</span>
+            <span class="pub-year">2021年第七届新疆数学青年博士论坛，乌鲁木齐，2021.01.01-03</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Enumeration of corners in tree-like tableaux</span>
+            <span class="pub-year">2017年新疆数学青年博士论坛，喀什，2017.08.19-21</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-journal">Log-behavior of the Fennessey-Larcombe-French sequence</span>
+            <span class="pub-year">第四届全国组合数论会议，大连，2015.09.18-20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
     <!-- 教学 -->
-    <div>
-        <div class="section-title"><i class="fas fa-chalkboard-teacher" style="margin-right:8px;"></i>教学</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;margin-top:4px;">
-            <span><strong>本科生：</strong>微积分(I)(II) · 线性代数 · 数理统计 · 多元统计分析 · 统计学导论</span>
-            <span><strong>研究生：</strong>计算统计 · 概率图模型 · 多元统计分析 · 统计学习 · 机器学习 · 大数据分析</span>
-        </div>
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-chalkboard-teacher"></i>教学</div>
+
+        <p><strong>本科生：</strong>微积分(I)(II)，线性代数，数理统计，多元统计分析，统计学导论</p>
+        <p><strong>研究生：</strong>计算统计，概率图模型，多元统计分析，统计学习，机器学习，大数据分析</p>
     </div>
 
+    <!-- ============================================================ -->
     <!-- 获奖 -->
-    <div>
-        <div class="section-title"><i class="fas fa-trophy" style="margin-right:8px;"></i>获奖与荣誉</div>
-        <ul class="sub-list">
-            <li>梅雪晖, 孙毅等. 数智赋能应用统计专项创新培养模式探索与实践，自治区级二等奖，2025</li>
-            <li>孙毅, 李智明等. 基于区情与智能时代的应用统计专业硕培养模式改革与创新，新疆大学教学成果三等奖，2023</li>
-            <li>李智明, 赵建平, 孙毅等. 面向跨学科应用统计专业硕士人才培养质量的探索与五年实践，新疆大学教学成果一等奖，2025</li>
-            <li>第九届全国大学生统计建模竞赛研究生组优秀指导教师，2023</li>
-            <li>第五届全国应用统计专业学位研究生教育教学成果奖二等奖、三等奖，2022</li>
-            <li>新疆大学研究生优秀指导教师，2025</li>
-        </ul>
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-trophy"></i>获奖</div>
+
+        <div class="award-item">梅雪晖, 孙毅等. 数智赋能应用统计专项创新培养模式探索与实践，自治区级二等奖(省级)，2025.10</div>
+        <div class="award-item">孙毅, 李智明等. 基于区情与智能时代的应用统计专业硕培养模式改革与创新，新疆大学教育教学成果奖三等奖(校级)，2023.12</div>
+        <div class="award-item">李智明, 赵建平, 孙毅等. 面向跨学科应用统计专业硕士人才培养质量的探索与五年实践，新疆大学教育教学成果奖一等奖(校级)，2025.05</div>
+        <div class="award-item">孙毅. 第九届全国大学生统计建模竞赛研究生组优秀指导教师，2023.08</div>
+        <div class="award-item">孙毅. 第五届全国应用统计专业学位研究生教育教学成果奖二等奖，2022.10</div>
+        <div class="award-item">孙毅. 第五届全国应用统计专业学位研究生教育教学成果奖三等奖，2022.10</div>
+        <div class="award-item">孙毅. 新疆大学研究生创新实践大赛优秀指导教师，2024</div>
+        <div class="award-item">孙毅. 新疆大学研究生优秀指导教师，2025</div>
+        <div class="award-item">孙毅. 新疆大学研究生创新实践大赛优秀指导教师，2025</div>
     </div>
 
+    <!-- ============================================================ -->
     <!-- 学术服务 -->
-    <div>
-        <div class="section-title"><i class="fas fa-users" style="margin-right:8px;"></i>学术服务</div>
-        <ul class="sub-list">
-            <li><strong>国际审稿：</strong>J. Comput. Appl. Math., Discrete Math. Theoret. Comput. Sci., J. Inequal. Appl., Appl. Math. Comput., Discrete Appl. Math., IEEE Trans. Cybern., European J. Combin., ICML, NIPS 等</li>
-            <li><strong>国内审稿：</strong>应用概率统计, 新疆大学学报, 黑龙江大学学报, 南通大学学报 等</li>
-            <li><strong>学术评论：</strong>美国数学会评论员</li>
-            <li><strong>学会服务：</strong>中国现场统计研究会因果推断分会理事 · 数据科学与人工智能分会理事 · 多元统计分会理事 · 资源与环境分会常务理事 · 新疆现场统计研究会常务理事 · 中国人工智能学会因果与不确定AI专委会委员</li>
-        </ul>
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-users-cog"></i>学术服务</div>
+
+        <p><strong>国际审稿杂志：</strong> International Journal of Mathematics and Mathematical Sciences, Journal of Computational and Applied Mathematics, Discrete Mathematics and Theoretical Computer Science, Journal of Inequalities and Applications, Applied Mathematics and Computation, Journal of Integers, Discrete Applied Mathematics, IEEE Transactions on Cybernetics, European Journal of Combinatorics, Discrete Mathematics, Algorithms and Applications, Rocky Mountain Journal of Mathematics, The Australasian Journal of Combinatorics, ICML, NIPS.</p>
+
+        <p><strong>国内审稿杂志：</strong> 黑龙江大学学报，南通大学学报，纯粹数学与应用数学，新疆大学学报，应用概率统计.</p>
+
+        <p><strong>学术评论：</strong> 美国数学会评论员.</p>
+
+        <p><strong>学术团体服务：</strong> 中国现场统计研究会因果推断分会理事，中国现场统计研究会数据科学与人工智能分会理事，中国现场统计研究会多元统计分析应用专业委员会理事，新疆现场统计研究会常务理事，中国人工智能学会因果与不确定人工智能专委会委员，中国人工智能学会资源与环境统计分会常务理事.</p>
     </div>
 
+    <!-- ============================================================ -->
     <!-- 学生培养 -->
-    <div>
-        <div class="section-title"><i class="fas fa-user-graduate" style="margin-right:8px;"></i>学生培养</div>
+    <!-- ============================================================ -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-user-graduate"></i>学生培养</div>
+
         <div class="student-grid">
-            <div class="year-label">2024级</div>
-            <span class="stu-item">刘晶瑞 · 李丹 · 孙凡雅 · 梁家伟 · 张元峰 · 吕妍(联培) · 王泽凡(联培) · 冯纪中(联培)</span>
-            <div class="year-label">2023级</div>
-            <span class="stu-item">胡昕宜 · 赵璐瑶 · 吕敏 · 王宽宽 · 张炜婧 · 孙妮娜 · 杨雨欣 · 马莹莹(联培) · 常静宇(联培) · 李卓婧(联培) · 鲁欣雨</span>
-            <div class="year-label">2022级</div>
-            <span class="stu-item">叶文倩(联培) · 胡锦奎(联培) · 刘华雄 · 李晓君(联培) · 高明瑞 · 朱旭(联培) · 朱萱 · 蒋卓庆(联培) · 王锋 · 王煊 · 邓雨欣 · 包秀坤 · 赵彩琴 · 屈紫婷(联培)</span>
-            <div class="year-label">2021级</div>
-            <span class="stu-item">刘董事 · 杜禹 · 谭璐瑶 · 王芳芳 · 张鹏妍 · 李伟华 · 孟繁宜</span>
-            <div class="year-label">2020级</div>
-            <span class="stu-item">闫涛伦 · 何雨 · 马宇薇 · 王艳 · 汪雅岚 · 刘雨晨 · 康雄 · 衡佩 · 王斌 · 赵新宇 · 黄荟茹 · 王广安 · 王婷</span>
-            <div class="year-label">2019级</div>
-            <span class="stu-item">姚诚德 · 张傲 · 徐红 · 别勒德汗 · 郑靓 · 孙婷然</span>
+            <span class="student-tag"><span class="label">2024级：</span>刘晶瑞；李丹；孙凡雅；梁家伟；张元峰；吕妍（联培）；王泽凡（联培）；冯纪中（联培）</span>
+        </div>
+
+        <div class="student-grid">
+            <span class="student-tag"><span class="label">2023级：</span>胡昕宜；赵璐瑶；吕敏；王宽宽；张炜婧；孙妮娜；杨雨欣；马莹莹(联培)；常静宇(联培)；李卓婧(联培)；鲁欣雨</span>
+        </div>
+
+        <div class="student-grid">
+            <span class="student-tag"><span class="label">2022级：</span>叶文倩(联培)；胡锦奎(联培)；刘华雄；李晓君(联培)；高明瑞；朱旭（联培）；朱萱；蒋卓庆(联培)；王锋；王煊；邓雨欣；包秀坤；赵彩琴；屈紫婷(联培)</span>
+        </div>
+
+        <div class="student-grid">
+            <span class="student-tag"><span class="label">2021级：</span>刘董事；杜禹；谭璐瑶；王芳芳；张鹏妍；李伟华；孟繁宜</span>
+        </div>
+
+        <div class="student-grid">
+            <span class="student-tag"><span class="label">2020级：</span>闫涛伦；何雨；马宇薇；王艳；汪雅岚；刘雨晨；康雄；衡佩；王斌；赵新宇；黄荟茹；王广安；王婷</span>
+        </div>
+
+        <div class="student-grid">
+            <span class="student-tag"><span class="label">2019级：</span>姚诚德；张傲；徐红；别勒德汗；郑靓；孙婷然</span>
         </div>
     </div>
 
-    <div style="margin-top:22px;font-size:12.5px;color:#7f8fa3;border-top:1px solid #eef3f8;padding-top:14px;text-align:right;">
-        <i class="fas fa-sync-alt" style="margin-right:4px;"></i> 最后更新：2026年7月
-    </div>
-
-</main>
 </div>
 
 </body>
 </html>
+```
