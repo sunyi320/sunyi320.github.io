@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>孙毅 · 教授 · 新疆财经大学</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #eef1f5;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 34% 66%;
+            overflow: hidden;
+        }
+        /* ===== 左侧栏 ===== */
+        .sidebar {
+            background: #1a2634;
+            color: #e0e9f2;
+            padding: 34px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .avatar {
+            text-align: center;
+        }
+        .avatar .name {
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .avatar .title {
+            font-size: 16px;
+            color: #9bb8d9;
+            margin-top: 4px;
+        }
+        .avatar .org {
+            font-size: 15px;
+            color: #b0cce5;
+            margin-top: 2px;
+        }
+        .divider {
+            height: 1px;
+            background: #33475e;
+            margin: 6px 0 10px 0;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #b6d0e8;
+            border-bottom: 2px solid #33475e;
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            color: #d0dcec;
+            word-break: break-all;
+        }
+        .contact-list i {
+            width: 20px;
+            color: #6a9fd8;
+            font-size: 15px;
+            text-align: center;
+        }
+        .contact-list a {
+            color: #d0dcec;
+            text-decoration: none;
+        }
+        .contact-list a:hover { color: #fff; }
+        .edu-item {
+            margin-bottom: 12px;
+        }
+        .edu-item .degree {
+            font-weight: 600;
+            font-size: 15px;
+            color: #e8edf3;
+        }
+        .edu-item .detail {
+            font-size: 13.5px;
+            color: #b0c8dd;
+            margin-top: 1px;
+        }
+        .edu-item .detail i {
+            color: #6a9fd8;
+            margin-right: 4px;
+        }
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .tag-group span {
+            background: #2a3f56;
+            padding: 3px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #deecf7;
+            border: 1px solid #3d5773;
+        }
+        .project-item {
+            font-size: 13.5px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #2e4056;
+            padding-bottom: 8px;
+        }
+        .project-item .proj-title {
+            font-weight: 500;
+            color: #dce8f2;
+        }
+        .project-item .proj-meta {
+            font-size: 12.5px;
+            color: #9bb8d9;
+        }
+        /* ===== 右侧主内容 ===== */
+        .main {
+            padding: 36px 38px 36px 30px;
+            background: #ffffff;
+        }
+        .main .section-title {
+            color: #1a2634;
+            border-bottom: 2px solid #e6edf4;
+            margin-top: 22px;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .main .section-title:first-of-type { margin-top: 0; }
+        .profile-text {
+            font-size: 14.5px;
+            color: #1f3143;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+        .pub-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .pub-list li {
+            font-size: 13.8px;
+            padding: 5px 0 5px 18px;
+            position: relative;
+            border-bottom: 1px solid #f0f4f8;
+            color: #1f3143;
+        }
+        .pub-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2d5f8b;
+            font-weight: 600;
+        }
+        .pub-list li .pub-authors {
+            color: #2d5f8b;
+            font-weight: 500;
+        }
+        .pub-list li .pub-journal {
+            font-style: italic;
+            color: #3d5a77;
+        }
+        .pub-list li .pub-status {
+            color: #b8860b;
+            font-weight: 500;
+            font-size: 12.5px;
+        }
+        .sub-list {
+            list-style: none;
+            padding-left: 8px;
+        }
+        .sub-list li {
+            font-size: 13.8px;
+            padding: 3px 0 3px 18px;
+            position: relative;
+            border-bottom: 1px solid #f5f8fa;
+        }
+        .sub-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2d5f8b;
+            font-weight: 700;
+        }
+        .student-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 18px;
+            font-size: 13.8px;
+            margin-top: 4px;
+        }
+        .student-grid .year-label {
+            font-weight: 600;
+            color: #1a2634;
+            grid-column: 1 / -1;
+            margin-top: 6px;
+            border-bottom: 1px dashed #dce3ec;
+            padding-bottom: 2px;
+        }
+        .student-grid .stu-item {
+            padding: 2px 0;
+            color: #1f3143;
+        }
+        .badge {
+            display: inline-block;
+            background: #eef3f8;
+            color: #1a2634;
+            font-size: 12px;
+            padding: 1px 12px;
+            border-radius: 20px;
+            margin-left: 6px;
+        }
+        @media (max-width: 820px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { padding: 28px 20px; }
+            .main { padding: 24px 18px; }
+            .student-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .container { box-shadow: none; border-radius: 0; }
+            .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ===== 左侧栏 ===== -->
+<aside class="sidebar">
+    <div class="avatar">
+        <div class="name">孙毅</div>
+        <div class="title">教授 · 硕导</div>
+        <div class="org"><i class="fas fa-university" style="margin-right:6px;color:#6a9fd8;"></i>新疆财经大学 · 统计与数据科学学院</div>
+    </div>
+
+    <div>
+        <div class="section-title"><i class="fas fa-address-card" style="margin-right:8px;"></i>联系方式</div>
+        <ul class="contact-list">
+            <li><i class="fas fa-phone"></i> <a href="tel:+8615099375317">15099375317</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:brianys1984@126.com">brianys1984@126.com</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:brian@xjufe.edu.cn">brian@xjufe.edu.cn</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> 新疆 · 乌鲁木齐</li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="section-title"><i class="fas fa-graduation-cap" style="margin-right:8px;"></i>教育经历</div>
+        <div class="edu-item">
+            <div class="degree">博士 · 应用数学</div>
+            <div class="detail"><i class="fas fa-calendar-alt"></i> 2013–2016 · 南开大学</div>
+            <div class="detail" style="font-size:12.5px;color:#9bb8d9;">导师：杨立波 教授</div>
+        </div>
+        <div class="edu-item">
+            <div class="degree">硕士 · 应用数学</div>
+            <div class="detail"><i class="fas fa-calendar-alt"></i> 2008–2011 · 新疆大学</div>
+            <div class="detail" style="font-size:12.5px;color:#9bb8d9;">导师：孟吉翔 教授 · 陈永川 院士（联培）</div>
+        </div>
+        <div class="edu-item">
+            <div class="degree">本科 · 应用数学</div>
+            <div class="detail"><i class="fas fa-calendar-alt"></i> 2004–2008 · 新疆大学</div>
+        </div>
+    </div>
+
+    <div>
+        <div class="section-title"><i class="fas fa-flask" style="margin-right:8px;"></i>科研兴趣</div>
+        <div class="tag-group">
+            <span>概率图模型</span><span>因果推理</span>
+            <span>组合数学</span><span>图论</span>
+            <span>机器学习</span><span>贝叶斯网络</span>
+        </div>
+    </div>
+
+    <div>
+        <div class="section-title"><i class="fas fa-tasks" style="margin-right:8px;"></i>在研项目</div>
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金天元基金子课题</div>
+            <div class="proj-meta">No.12426105 · 2025.01–2025.12</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">国家自然科学基金天元基金 · 图模型与因果推断讲习班</div>
+            <div class="proj-meta">No.12426520 · 2025.01–2025.12</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">新疆自治区自然科学基金</div>
+            <div class="proj-meta">No.2022D01C406 · 2022.10–2025.12</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">横向：新疆第五次经济普查重点课题</div>
+            <div class="proj-meta">No.XHYJ-2025-TJ001 · 2025.06–2025.10</div>
+        </div>
+        <div class="project-item">
+            <div class="proj-title">横向：新疆银狐数据科技 · 智能旅游算法</div>
+            <div class="proj-meta">2025.07–2028.06</div>
+        </div>
+    </div>
+
+    <div style="margin-top:auto;font-size:12.5px;color:#6f8aa6;border-top:1px solid #2f4056;padding-top:16px;">
+        <i class="fas fa-print" style="margin-right:6px;"></i> 在线简历 · 持续更新
+    </div>
+</aside>
+
+<!-- ===== 右侧主内容 ===== -->
+<main class="main">
+
+    <!-- 个人简介 -->
+    <div>
+        <div class="section-title"><i class="fas fa-user" style="margin-right:8px;"></i>个人简介</div>
+        <p class="profile-text">
+            孙毅，新疆财经大学统计与数据科学学院教授、硕导，南开大学组合数学中心博士，东北师范大学统计学博士后。
+            中国现场统计研究会理事，中国人工智能学会因果与不确定性人工智能专委会委员，中国现场统计研究会因果推断分会常务理事，
+            新疆现场统计研究会常务理事；数据科学与人工智能分会理事；多元统计分会理事；资源与环境分会常务理事，
+            中国工业统计教育研究会地学数据分会理事。受邀担任美国数学会评论员，及ICML、NIPS等顶会论文评审专家。
+        </p>
+        <p class="profile-text" style="margin-top:8px;">
+            研究方向为概率图模型与因果推理。主持国家自然科学基金4项、参与1项；主持中国博士后面上项目1项、
+            新疆自治区青年基金1项、面上项目1项、新疆教育厅青年项目1项；主持教育教改项目2项；主持及参与横向课题4项。
+            发表学术论文50余篇，含Biometrika、JMLR、TPAMI等权威期刊；申请软著3项。
+            获新疆自治区省级教育教学成果奖1项，新疆大学教学成果一等奖1项、三等奖1项。
+        </p>
+    </div>
+
+    <!-- 代表性论文（精选） -->
+    <div>
+        <div class="section-title"><i class="fas fa-file-alt" style="margin-right:8px;"></i>代表性论文（* 通信作者）</div>
+        <ul class="pub-list">
+            <li><span class="pub-authors">P. Heng, S.Y. He, Y. Sun, Jianhua Guo*</span> Revisiting Madigan and Mosurski: Collapsibility in Contingency tables. <span class="pub-journal">Biometrika</span>, 2026, doi:10.1093/biomet/asag024</li>
+            <li><span class="pub-authors">P. Heng, X.Y. Hu, Y. Sun*</span> Decomposition for Bayesian Networks: Local and Parallel Inference. <span class="pub-journal">TPAMI</span>, accepted.</li>
+            <li><span class="pub-authors">X.D. Xie, J.H. Guo*, Y. Sun</span> DAGs as Minimal I-maps for the Induced Models of Causal Bayesian Networks under Conditioning. <span class="pub-journal">Journal of Machine Learning Research</span>, 2025, 26:1-62.</li>
+            <li><span class="pub-authors">Y.X. Deng, Y. Sun, H.X. Liu</span> Identifying Collapsible Sets in Directed Graphical Models via Inducing Paths. <span class="pub-journal">Statistics and Computing</span>, 2025, 35:115.</li>
+            <li><span class="pub-authors">L.Y. Tan, Y. Sun*</span> Structure Learning of LWF Chain Graphs Based on Minimal c-separation Trees. <span class="pub-journal">International Journal of Approximate Reasoning</span>, 2024, 175:109298.</li>
+            <li><span class="pub-authors">Y. Du, Y. Sun*, L.Y. Tan</span> Ordinal Causal Discovery Based on Markov Blanket. <span class="pub-journal">Computational Statistics</span>, 2025, 40:1311-1335.</li>
+            <li><span class="pub-authors">W.H. Li, Y. Sun*, P. Heng</span> Conditional independence collapsibility for acyclic directed mixed graph models. <span class="pub-journal">International Journal of Approximate Reasoning</span>, 2024, 170:109208.</li>
+            <li><span class="pub-authors">P. Heng, Y. Sun*</span> Algorithms for convex hull finding in undirected graphical models. <span class="pub-journal">Applied Mathematics and Computation</span>, 2023, 445:1-11.</li>
+        </ul>
+    </div>
+
+    <!-- 软著 & 荣誉 -->
+    <div>
+        <div class="section-title"><i class="fas fa-copyright" style="margin-right:8px;"></i>软件著作权</div>
+        <ul class="sub-list">
+            <li>孙毅, 叶文倩: 皮肤癌分类识别小程序 (登记号: 2025SR0168384)</li>
+            <li>孙毅, 屈紫婷, 胡锦奎: 基于深度学习的农业病虫害图像识别系统 (登记号: 2025SR0338187)</li>
+            <li>孙毅, 赵璐瑶, 张盼盼: 智慧旅游语音播报微信小程序 (登记号: 2026SR0049513)</li>
+        </ul>
+    </div>
+
+    <!-- 教学 -->
+    <div>
+        <div class="section-title"><i class="fas fa-chalkboard-teacher" style="margin-right:8px;"></i>教学</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;margin-top:4px;">
+            <span><strong>本科生：</strong>微积分(I)(II) · 线性代数 · 数理统计 · 多元统计分析 · 统计学导论</span>
+            <span><strong>研究生：</strong>计算统计 · 概率图模型 · 多元统计分析 · 统计学习 · 机器学习 · 大数据分析</span>
+        </div>
+    </div>
+
+    <!-- 获奖 -->
+    <div>
+        <div class="section-title"><i class="fas fa-trophy" style="margin-right:8px;"></i>获奖与荣誉</div>
+        <ul class="sub-list">
+            <li>梅雪晖, 孙毅等. 数智赋能应用统计专项创新培养模式探索与实践，自治区级二等奖，2025</li>
+            <li>孙毅, 李智明等. 基于区情与智能时代的应用统计专业硕培养模式改革与创新，新疆大学教学成果三等奖，2023</li>
+            <li>李智明, 赵建平, 孙毅等. 面向跨学科应用统计专业硕士人才培养质量的探索与五年实践，新疆大学教学成果一等奖，2025</li>
+            <li>第九届全国大学生统计建模竞赛研究生组优秀指导教师，2023</li>
+            <li>第五届全国应用统计专业学位研究生教育教学成果奖二等奖、三等奖，2022</li>
+            <li>新疆大学研究生优秀指导教师，2025</li>
+        </ul>
+    </div>
+
+    <!-- 学术服务 -->
+    <div>
+        <div class="section-title"><i class="fas fa-users" style="margin-right:8px;"></i>学术服务</div>
+        <ul class="sub-list">
+            <li><strong>国际审稿：</strong>J. Comput. Appl. Math., Discrete Math. Theoret. Comput. Sci., J. Inequal. Appl., Appl. Math. Comput., Discrete Appl. Math., IEEE Trans. Cybern., European J. Combin., ICML, NIPS 等</li>
+            <li><strong>国内审稿：</strong>应用概率统计, 新疆大学学报, 黑龙江大学学报, 南通大学学报 等</li>
+            <li><strong>学术评论：</strong>美国数学会评论员</li>
+            <li><strong>学会服务：</strong>中国现场统计研究会因果推断分会理事 · 数据科学与人工智能分会理事 · 多元统计分会理事 · 资源与环境分会常务理事 · 新疆现场统计研究会常务理事 · 中国人工智能学会因果与不确定AI专委会委员</li>
+        </ul>
+    </div>
+
+    <!-- 学生培养 -->
+    <div>
+        <div class="section-title"><i class="fas fa-user-graduate" style="margin-right:8px;"></i>学生培养</div>
+        <div class="student-grid">
+            <div class="year-label">2024级</div>
+            <span class="stu-item">刘晶瑞 · 李丹 · 孙凡雅 · 梁家伟 · 张元峰 · 吕妍(联培) · 王泽凡(联培) · 冯纪中(联培)</span>
+            <div class="year-label">2023级</div>
+            <span class="stu-item">胡昕宜 · 赵璐瑶 · 吕敏 · 王宽宽 · 张炜婧 · 孙妮娜 · 杨雨欣 · 马莹莹(联培) · 常静宇(联培) · 李卓婧(联培) · 鲁欣雨</span>
+            <div class="year-label">2022级</div>
+            <span class="stu-item">叶文倩(联培) · 胡锦奎(联培) · 刘华雄 · 李晓君(联培) · 高明瑞 · 朱旭(联培) · 朱萱 · 蒋卓庆(联培) · 王锋 · 王煊 · 邓雨欣 · 包秀坤 · 赵彩琴 · 屈紫婷(联培)</span>
+            <div class="year-label">2021级</div>
+            <span class="stu-item">刘董事 · 杜禹 · 谭璐瑶 · 王芳芳 · 张鹏妍 · 李伟华 · 孟繁宜</span>
+            <div class="year-label">2020级</div>
+            <span class="stu-item">闫涛伦 · 何雨 · 马宇薇 · 王艳 · 汪雅岚 · 刘雨晨 · 康雄 · 衡佩 · 王斌 · 赵新宇 · 黄荟茹 · 王广安 · 王婷</span>
+            <div class="year-label">2019级</div>
+            <span class="stu-item">姚诚德 · 张傲 · 徐红 · 别勒德汗 · 郑靓 · 孙婷然</span>
+        </div>
+    </div>
+
+    <div style="margin-top:22px;font-size:12.5px;color:#7f8fa3;border-top:1px solid #eef3f8;padding-top:14px;text-align:right;">
+        <i class="fas fa-sync-alt" style="margin-right:4px;"></i> 最后更新：2026年7月
+    </div>
+
+</main>
+</div>
+
+</body>
+</html>
